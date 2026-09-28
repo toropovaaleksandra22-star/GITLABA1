@@ -1,0 +1,36 @@
+@startuml
+left to right direction
+actor "Заведующий (комендант)" as Admin
+actor "Студент" as Student
+
+package "Система учёта проживания" {
+  usecase "Управление данными студентов" as UC_Students
+  usecase "Управление комнатами" as UC_Rooms
+  usecase "Оформление заселения" as UC_CheckIn
+  usecase "Оформление выселения" as UC_CheckOut
+  usecase "Учёт нарушений" as UC_Narushenia
+  usecase "Регистрация студентов в базу данных" as UC_Registrazia
+  usecase "Поиск свободных мест" as UC_SearchFree
+  usecase "Просмотр личной информации" as UC_SelfInfo
+  usecase "Вход в систему" as UC_SistemA
+  usecase "Вход в систему" as UC_SistemS
+  usecase "Проверка доступности места" as UC_RoomCheck
+}
+
+Admin --> UC_SistemA
+UC_SistemA --> UC_Students
+UC_SistemA --> UC_Rooms
+UC_SistemA --> UC_CheckIn
+UC_SistemA --> UC_CheckOut
+UC_SistemA --> UC_Narushenia
+UC_SistemA --> UC_Registrazia
+
+Student --> UC_SistemS
+UC_SistemS --> UC_SearchFree
+UC_SistemS --> UC_SelfInfo
+
+UC_CheckIn ..> UC_RoomCheck : <<include>>
+UC_Narushenia ..> UC_CheckOut : <<extend>>
+UC_Registrazia ..> UC_SearchFree : <<extend>>
+
+@enduml
