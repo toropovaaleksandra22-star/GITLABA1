@@ -15,7 +15,6 @@ package "Система учёта проживания" {
   usecase "Вход в систему" as UC_SistemA
   usecase "Вход в систему" as UC_SistemS
   usecase "Проверка доступности места" as UC_RoomCheck
-  usecase "lkbnl" as UC_lnvef
 }
 
 Admin --> UC_SistemA
