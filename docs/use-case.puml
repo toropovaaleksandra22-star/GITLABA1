@@ -17,17 +17,17 @@ package "Система учёта проживания" {
   usecase "Проверка доступности места" as UC_RoomCheck
 }
 
-Admin --> UC_SistemA
-UC_SistemA --> UC_Students
-UC_SistemA --> UC_Rooms
-UC_SistemA --> UC_CheckIn
-UC_SistemA --> UC_CheckOut
-UC_SistemA --> UC_Narushenia
-UC_SistemA --> UC_Registrazia
+Admin -- UC_SistemA
+UC_SistemA -- UC_Students
+UC_SistemA -- UC_Rooms
+UC_SistemA -- UC_CheckIn
+UC_SistemA -- UC_CheckOut
+UC_SistemA -- UC_Narushenia
+UC_SistemA -- UC_Registrazia
 
 Student --> UC_SistemS
-UC_SistemS --> UC_SearchFree
-UC_SistemS --> UC_SelfInfo
+UC_SistemS -- UC_SearchFree
+UC_SistemS -- UC_SelfInfo
 
 UC_CheckIn ..> UC_RoomCheck : <<include>>
 UC_Narushenia ..> UC_CheckOut : <<extend>>
