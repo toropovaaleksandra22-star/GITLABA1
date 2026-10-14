@@ -25,7 +25,7 @@ UC_SistemA -- UC_CheckOut
 UC_SistemA -- UC_Narushenia
 UC_SistemA -- UC_Registrazia
 
-Student --> UC_SistemS
+Student -- UC_SistemS
 UC_SistemS -- UC_SearchFree
 UC_SistemS -- UC_SelfInfo
 
