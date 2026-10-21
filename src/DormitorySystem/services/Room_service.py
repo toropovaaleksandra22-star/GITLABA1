@@ -4,7 +4,6 @@ def add_room(
     room_number: int,
     floor: int,
     capacity: int,
-    current_occupant: int
 ) -> int:
     """Добавить новую комнату."""
 

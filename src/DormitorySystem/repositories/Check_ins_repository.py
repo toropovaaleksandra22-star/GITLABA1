@@ -43,7 +43,7 @@ def update_checkin(checkin_id, data):
     fields=",".join(f"{column} = ?" for column in data)
     conn=get_connection()
     cur=conn.cursor()
-    cur.execute("UPDATE CHECK_INS SET {fields} WHERE Checkin_ID=?",
+    cur.execute(f"UPDATE CHECK_INS SET {fields} WHERE Checkin_ID=?",
                 (*data.values(),checkin_id))
     affected_rows=cur.rowcount
     conn.commit()
